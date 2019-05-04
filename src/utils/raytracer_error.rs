@@ -5,14 +5,14 @@ use std::string::ToString;
 
 #[derive(Debug)]
 pub enum RayTracerError {
-    ColorInvalid,
+    ColorInvalid(String),
 }
 
 impl Display for RayTracerError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let description: String = match self {
-            GodotError::ColorInvalid => {
-                "color value nt between 0 and 1 ".to_string()
+            RayTracerError::ColorInvalid(s) => {
+                format!("color {} value not between 0 and 1 ", s).to_string()
             }
         };
         write!(f, "{}", description)
