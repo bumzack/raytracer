@@ -1,6 +1,7 @@
 use std::error::Error as StdError;
 use std::fmt;
 use std::fmt::Display;
+use std::string::ToString;
 
 #[derive(Debug)]
 pub enum RayTracerError {
