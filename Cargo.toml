@@ -1,0 +1,10 @@
+[package]
+name = "raytracer"
+version = "0.1.0"
+authors = ["bumzack"]
+edition = "2018"
+
+[dependencies]
+chrono = "*"
+
+[dev-dependencies]
