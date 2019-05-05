@@ -2,6 +2,7 @@ use std::fmt;
 use std::fmt::Display;
 use std::ops::{Add, Div, Mul, Neg, Sub};
 
+#[derive(Clone)]
 pub struct Vector {
     pub x: f32,
     pub y: f32,
@@ -13,11 +14,20 @@ pub trait VectorOps {
     fn magnitude(&self) -> f32;
     fn unit_vector(&self) -> Vector;
     fn new(x: f32, y: f32, z: f32) -> Vector;
+    fn default() -> Vector;
     fn dot_product(a: &Vector, b: &Vector) -> f32;
     fn cross_product(a: &Vector, b: &Vector) -> Vector;
 }
 
 impl VectorOps for Vector {
+    fn default() -> Vector {
+        Vector {
+            x: 0.0,
+            y: 0.0,
+            z: 0.0,
+        }
+    }
+
     fn new(x: f32, y: f32, z: f32) -> Vector {
         Vector {
             x: x,
