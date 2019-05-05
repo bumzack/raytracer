@@ -80,29 +80,7 @@ impl Scene {
 
 
     // Oversample the image using the anti-aliasing factor.
-//        const size_t largePixelsWide = antiAliasFactor * pixelsWide;
-//        const size_t largePixelsHigh = antiAliasFactor * pixelsHigh;
-//        const size_t smallerDim =
-//            ((pixelsWide < pixelsHigh) ? pixelsWide : pixelsHigh);
-//
-//        const double largeZoom  = antiAliasFactor * zoom * smallerDim;
-//        ImageBuffer buffer(largePixelsWide, largePixelsHigh, backgroundColor);
-//
-//        // The camera is located at the origin.
-//        Vector camera(0.0, 0.0, 0.0);
-//
-//        // The camera faces in the -z direction.
-//        // This allows the +x direction to be to the right,
-//        // and the +y direction to be upward.
-//        Vector direction(0.0, 0.0, -1.0);
-//
-//        const Color fullIntensity(1.0, 1.0, 1.0);
-//
-//        // We keep a list of (i,j) screen coordinates for pixels
-//        // we are not able to trace definitive rays for.
-//        // Later we will come back and fix these pixels.
-//        PixelList ambiguousPixelList;
-//
+
 //        for (size_t i=0; i < largePixelsWide; ++i)
 //        {
 //            direction.x = (i - largePixelsWide/2.0) / largeZoom;
@@ -110,28 +88,7 @@ impl Scene {
 //            {
 //                direction.y = (largePixelsHigh/2.0 - j) / largeZoom;
 //
-//                #if RAYTRACE_DEBUG_POINTS
-//            {
-//                using namespace std;
-//
-//                // Assume no active debug point unless we find one below.
-//                activeDebugPoint = NULL;
-//
-//                DebugPointList::const_iterator iter = debugPointList.begin();
-//                DebugPointList::const_iterator end  = debugPointList.end();
-//                for(; iter != end; ++iter)
-//                {
-//                    if ((iter->iPixel == i) && (iter->jPixel == j))
-//                    {
-//                    cout << endl;
-//                    cout << "Hit breakpoint at (";
-//                    cout << i << ", " << j <<")" << endl;
-//                    activeDebugPoint = &(*iter);
-//                    break;
-//                    }
-//                }
-//            }
-//                #endif
+
 //
 //                PixelData& pixel = buffer.Pixel(i,j);
 //                try
@@ -165,11 +122,7 @@ impl Scene {
 //                }
 //            }
 //        }
-//
-//        #if RAYTRACE_DEBUG_POINTS
-//        // Leave no chance of a dangling pointer into debug points.
-//        activeDebugPoint = NULL;
-//        #endif
+
 //
 //        // Go back and "heal" ambiguous pixels as best we can.
 //        PixelList::const_iterator iter = ambiguousPixelList.begin();
